@@ -1,0 +1,167 @@
+/* General Styles */
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc; /* Fallback color */
+  color: #333;
+  background-image: url('../public/food_image.jpg');
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; 
+  background-repeat: no-repeat; 
+  transition: background-color 0.3s ease;
+  height: 100vh; 
+  /* overflow-x: hidden; */
+  padding: 0;
+  background-attachment: fixed;
+}
+
+/* Other styles remain the same... */
+
+
+.app-heading {
+  text-align: center; /* Center align the text */
+  font-size: 3.0rem; /* Large font size */
+  font-weight: bold; /* Bold text */
+  color: #0c1ee3; /* A nice color for the heading */
+  margin-top: 20px; /* Space above the heading */
+  margin-bottom: 20px; /* Space below the heading */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+  animation: fadeIn 1s ease; /* Optional fade-in effect */
+}
+
+
+.App {
+  display: flex;
+  flex-direction: column; /* Change to column to stack elements vertically */
+  align-items: center; /* Center the items horizontally */
+  justify-content: flex-start; /* Start from the top */
+  height: 100vh; /* Full viewport height */
+  /* padding: 1rem; */
+}
+
+
+
+/* Recipe Card Styles */
+.recipe-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transform transition */
+  margin-bottom: 10px;
+}
+
+.recipe-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px); /* Lift effect on hover */
+}
+
+.recipe-card .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Form Styles */
+.recipe-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recipe-card label {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease; /* Smooth label color transition */
+}
+
+.recipe-card input,
+.recipe-card select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease, background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.recipe-card input:focus,
+.recipe-card select:focus {
+  border-color: #4a90e2;
+  background-color: #fff; /* Change background color on focus */
+  outline: none;
+}
+
+/* Button Styles */
+.recipe-card button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4a90e2;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+}
+
+.recipe-card button:hover {
+  background-color: #357abd;
+  transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Recipe Text Display */
+.recipe-display {
+  width: 100%;
+  max-width: 400px;
+  height: 565px;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  white-space: pre-line;
+  font-size: 0.875rem;
+  color: #333;
+  opacity: 0; /* Start hidden for fade-in */
+  animation: fadeIn 0.5s forwards; /* Fade-in animation */
+}
+
+/* Scrollbar Styles */
+.recipe-display::-webkit-scrollbar {
+  width: 8px;
+}
+
+.recipe-display::-webkit-scrollbar-thumb {
+  background-color: #4a90e2;
+  border-radius: 4px;
+}
+
+.recipe-display::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .recipe-card,
+  .recipe-display {
+    max-width: 100%;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Fade in to visible */
+  }
+}
